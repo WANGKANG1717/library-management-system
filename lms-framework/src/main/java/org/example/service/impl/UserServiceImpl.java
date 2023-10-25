@@ -4,13 +4,19 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.example.constants.SystemConstants;
 import org.example.domain.ResponseResult;
+import org.example.domain.dto.UserDto;
 import org.example.domain.entity.User;
 import org.example.domain.vo.PageVo;
 import org.example.domain.vo.UserDetailVo;
+import org.example.enums.AppHttpCodeEnum;
+import org.example.exception.SystemException;
 import org.example.mapper.UserMapper;
 import org.example.service.UserService;
 import org.example.utils.BeanCopyUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -24,6 +30,9 @@ import java.util.List;
  */
 @Service("userService")
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public ResponseResult listUser(Integer pageNum, Integer pageSize, String userName, String status, String type) {
         // 可以根据用户名模糊搜索
@@ -40,5 +49,90 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         List<UserDetailVo> userDetailVos = BeanCopyUtils.copyBeanList(page.getRecords(), UserDetailVo.class);
         PageVo pageVo = new PageVo(userDetailVos, page.getTotal());
         return ResponseResult.okResult(pageVo);
+    }
+
+    @Override
+    public ResponseResult addUser(UserDto userDto) {
+        User user = BeanCopyUtils.copyBean(userDto, User.class);
+        user.setId(null);
+        // user.setType(SystemConstants.ADMIN);
+        // 对数据进行非空判断
+        if (!StringUtils.hasText(user.getNumber())) {
+            throw new SystemException(AppHttpCodeEnum.NUMBER_NOT_NULL1);
+        }
+        if (!StringUtils.hasText(user.getUserName())) {
+            throw new SystemException(AppHttpCodeEnum.USERNAME_NOT_NULL);
+        }
+        if (!StringUtils.hasText(user.getPassword())) {
+            throw new SystemException(AppHttpCodeEnum.PASSWORD_NOT_NULL);
+        }
+        // 对数据是否存在的判断
+        if (numberExist(user.getNumber())) {
+            throw new SystemException(AppHttpCodeEnum.NUMBER_EXISTS);
+        }
+        if (userNameExist(user.getUserName())) {
+            throw new SystemException(AppHttpCodeEnum.USERNAME_EXIST);
+        }
+        // 密码加密
+        String encodePassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodePassword);
+        save(user);
+        return ResponseResult.okResult();
+    }
+
+    @Override
+    public ResponseResult deleteUser(Long id) {
+        removeById(id);
+        return ResponseResult.okResult();
+    }
+
+    @Override
+    public ResponseResult getUserDetail(Long id) {
+        User user = getById(id);
+        if (user == null) {
+            return ResponseResult.okResult();
+        }
+        UserDetailVo userDetailVo = BeanCopyUtils.copyBean(user, UserDetailVo.class);
+        return ResponseResult.okResult(userDetailVo);
+    }
+
+    @Override
+    public ResponseResult updateUser(UserDto userDto) {
+        User user = BeanCopyUtils.copyBean(userDto, User.class);
+        // 对数据进行非空判断
+        // if (!StringUtils.hasText(user.getNumber())) {
+        //     throw new SystemException(AppHttpCodeEnum.NUMBER_NOT_NULL1);
+        // }
+        // if (!StringUtils.hasText(user.getUserName())) {
+        //     throw new SystemException(AppHttpCodeEnum.USERNAME_NOT_NULL);
+        // }
+        // if (!StringUtils.hasText(user.getPassword())) {
+        //     throw new SystemException(AppHttpCodeEnum.PASSWORD_NOT_NULL);
+        // }
+        // 对数据是否存在的判断
+        if (numberExist(user.getNumber())) {
+            throw new SystemException(AppHttpCodeEnum.NUMBER_EXISTS);
+        }
+        if (userNameExist(user.getUserName())) {
+            throw new SystemException(AppHttpCodeEnum.USERNAME_EXIST);
+        }
+        if (user.getPassword() != null) {
+            String encodePassword = passwordEncoder.encode(user.getPassword());
+            user.setPassword(encodePassword);
+        }
+        updateById(user);
+        return ResponseResult.okResult();
+    }
+
+    private boolean numberExist(String number) {
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getNumber, number);
+        return count(queryWrapper) > 0;
+    }
+
+    private boolean userNameExist(String userName) {
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getUserName, userName);
+        return count(queryWrapper) > 0;
     }
 }

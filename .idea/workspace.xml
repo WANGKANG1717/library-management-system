@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发">
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/dto/BookDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BookVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/mapper/BookMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
+    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/25 WANGKANG&#10;1. 完成图书的增删改查基本操作">
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/dto/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/UserDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/UserDetailVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/mybatisplus/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/mybatisplus/MyMetaObjectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/SystemLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/SystemLoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +155,7 @@
       <workItem from="1698039125631" duration="1100000" />
       <workItem from="1698040318806" duration="18693000" />
       <workItem from="1698144288505" duration="7577000" />
-      <workItem from="1698215248035" duration="4520000" />
+      <workItem from="1698215248035" duration="8391000" />
     </task>
     <task id="LOCAL-00001" summary="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发">
       <created>1698144957093</created>
@@ -168,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698144957093</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2023/10/25 WANGKANG&#10;1. 完成图书的增删改查基本操作">
+      <created>1698219788946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698219788946</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,9 +203,19 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发" />
+    <MESSAGE value="2023/10/25 WANGKANG&#10;1. 完成图书的增删改查基本操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/10/25 WANGKANG&#10;1. 完成图书的增删改查基本操作" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.example.domain.entity.User" memberName="userName" />

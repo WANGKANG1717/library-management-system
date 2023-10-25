@@ -26,7 +26,8 @@ public enum AppHttpCodeEnum {
     NUMBER_NOT_NULL2(517, "学号不能为空"),
     NUMBER_NOT_EXISTS(518, "工号不存在"),
     BOOKNAME_IS_NULL(519, "书名为空"),
-    ISBN_IS_NULL(520, "isbn为空");;
+    ISBN_IS_NULL(520, "isbn为空"),
+    NUMBER_EXISTS(521, "编号已存在");
     int code;
     String msg;
 

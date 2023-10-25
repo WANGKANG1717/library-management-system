@@ -70,4 +70,14 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         save(book);
         return ResponseResult.okResult();
     }
+
+    @Override
+    public ResponseResult getBookDetail(Long id) {
+        Book book = getById(id);
+        if (book ==null){
+            return ResponseResult.okResult();
+        }
+        BookVo bookVo = BeanCopyUtils.copyBean(book, BookVo.class);
+        return ResponseResult.okResult(bookVo);
+    }
 }

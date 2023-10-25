@@ -18,9 +18,13 @@ public class BookController {
     public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName, String category, String isbn, Integer inventory){
         return bookService.listBook(pageNum, pageSize, bookName, category, isbn, inventory);
     }
+    @GetMapping("/get/{id}")
+    public ResponseResult getBookDetail(@PathVariable("id") Long id){
+        return bookService.getBookDetail(id);
+    }
     // 删
     @DeleteMapping("/delete/{id}")
-    public ResponseResult deleteBook(@PathVariable Long id){
+    public ResponseResult deleteBook(@PathVariable("id") Long id){
         return bookService.deleteBook(id);
     }
     // 改

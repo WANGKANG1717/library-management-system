@@ -19,8 +19,6 @@ public class UserDetailVo {
     private String userName;
     // 昵称
     private String nickName;
-    // 密码
-    private String password;
     // 用户类型：0代表普通用户，1代表管理员
     private String type;
     // 账号状态（0正常 1停用）

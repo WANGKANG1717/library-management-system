@@ -19,5 +19,7 @@ public interface BookService extends IService<Book> {
     ResponseResult updateBook(BookDto bookDto);
 
     ResponseResult addBook(BookDto bookDto);
+
+    ResponseResult getBookDetail(Long id);
 }
 
