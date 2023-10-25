@@ -24,7 +24,9 @@ public enum AppHttpCodeEnum {
     DELETE_CURRENT_USER(515, "不删除当前用户"),
     NUMBER_NOT_NULL1(516, "工号不能为空"),
     NUMBER_NOT_NULL2(517, "学号不能为空"),
-    NUMBER_NOT_EXISTS(518, "工号不存在");;
+    NUMBER_NOT_EXISTS(518, "工号不存在"),
+    BOOKNAME_IS_NULL(519, "书名为空"),
+    ISBN_IS_NULL(520, "isbn为空");;
     int code;
     String msg;
 

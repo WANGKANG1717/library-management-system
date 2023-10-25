@@ -4,60 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/mybatisx/templates.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-back/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/BackMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/annotation/SystemLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/config/FastJsonRedisSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/config/MybatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/constants/SystemConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/LoginUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/PageVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/UserDetailVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/exception/SystemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/mybatisplus/MyMetaObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/security/AccessDeniedHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/security/AuthenticationEntryPointImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/SystemLoginServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/BeanCopyUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/PathUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/RedisCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/SecurityUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/WebUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-front/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/FrontMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-front/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发">
+      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/dto/BookDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BookVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/mapper/BookMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/mybatisplus/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/handler/mybatisplus/MyMetaObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/SystemLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/SystemLoginServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +33,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="WANGKANG" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -102,12 +68,14 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/WANGKANG/Desktop/library-management-system/lms-framework/src/main/java/org/example/service/impl&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.24597701&quot;,
@@ -146,19 +114,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BackMain">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="lms-framework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BackMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="lms-back" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.BackMain" />
@@ -189,7 +144,6 @@
       <list>
         <item itemvalue="Spring Boot.BackMain" />
         <item itemvalue="Spring Boot.FrontMain" />
-        <item itemvalue="应用程序.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -204,12 +158,49 @@
       <workItem from="1698038257416" duration="846000" />
       <workItem from="1698039125631" duration="1100000" />
       <workItem from="1698040318806" duration="18693000" />
-      <workItem from="1698144288505" duration="341000" />
+      <workItem from="1698144288505" duration="7577000" />
+      <workItem from="1698215248035" duration="4520000" />
     </task>
+    <task id="LOCAL-00001" summary="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发">
+      <created>1698144957093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698144957093</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

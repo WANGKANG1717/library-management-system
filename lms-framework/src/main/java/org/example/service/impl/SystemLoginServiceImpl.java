@@ -3,6 +3,7 @@ package org.example.service.impl;
 import com.baomidou.mybatisplus.core.injector.methods.SelectById;
 import com.baomidou.mybatisplus.core.injector.methods.SelectByMap;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.example.constants.SystemConstants;
 import org.example.domain.ResponseResult;
 import org.example.domain.entity.LoginUser;
 import org.example.domain.entity.User;
@@ -33,6 +34,7 @@ public class SystemLoginServiceImpl extends ServiceImpl<UserMapper, User> implem
     public ResponseResult login(User user) {
         Map<String,Object> map = new HashMap<String, Object>();
         map.put("number",user.getNumber());
+        map.put("type", SystemConstants.ADMIN);
         List<User> list = getBaseMapper().selectByMap(map);
         if (list.size() == 0) {
             return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS);

@@ -3,6 +3,7 @@ package org.example.handler.mybatisplus;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
 // import org.example.utils.SecurityUtils;
+import org.example.utils.SecurityUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -14,8 +15,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         Long userId = null;
         try {
-            // userId = SecurityUtils.getUserId();
-            userId = -1L;
+            userId = SecurityUtils.getUserId();
         } catch (Exception e) {
             // e.printStackTrace();
             userId = -1L;// 表示是自己创建
@@ -30,8 +30,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     public void updateFill(MetaObject metaObject) {
         Long userId = null;
         try {
-            // userId = SecurityUtils.getUserId();
-            userId = -1L;
+            userId = SecurityUtils.getUserId();
         } catch (Exception e) {
             // e.printStackTrace();
             userId = -1L;// 表示是自己创建
