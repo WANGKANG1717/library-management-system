@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/25 WANGKANG&#10;1. 完成用户的增删改查基本操作">
-      <change afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BorrowHistoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/BorrowHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/mapper/BorrowHistoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BorrowHistoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
+    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中">
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/dto/BorrowHistoryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BorrowHistoryVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BorrowHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BorrowHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/constants/SystemConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/constants/SystemConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BorrowHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BorrowHistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,39 +51,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/WANGKANG/Desktop/library-management-system/lms-framework/src/main/java/org/example/service/impl&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.24597701&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.sjhy.plugin.ui.TemplateSettingForm&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.25382262&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;c93e7492c8581a768c68c377c1b34ad7&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/WANGKANG/Desktop/library-management-system/lms-framework/src/main/java/org/example/service/impl",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.24597701",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "settings.editor.splitter.proportion": "0.25382262",
+    "spring.configuration.checksum": "c93e7492c8581a768c68c377c1b34ad7",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -152,7 +152,8 @@
       <workItem from="1698039125631" duration="1100000" />
       <workItem from="1698040318806" duration="18693000" />
       <workItem from="1698144288505" duration="7577000" />
-      <workItem from="1698215248035" duration="10351000" />
+      <workItem from="1698215248035" duration="10364000" />
+      <workItem from="1698545115865" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发">
       <created>1698144957093</created>
@@ -175,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698224719441</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中">
+      <created>1698229521884</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698229521884</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +217,8 @@
     <MESSAGE value="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发" />
     <MESSAGE value="2023/10/25 WANGKANG&#10;1. 完成图书的增删改查基本操作" />
     <MESSAGE value="2023/10/25 WANGKANG&#10;1. 完成用户的增删改查基本操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023/10/25 WANGKANG&#10;1. 完成用户的增删改查基本操作" />
+    <MESSAGE value="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

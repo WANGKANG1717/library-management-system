@@ -31,4 +31,10 @@ public class SystemConstants {
      */
     public static final String NORMAL = "0";
     public static final String ADMIN = "1";
+
+    //     0已借出 / 1已归还 / 2过期未还 / 3已预约
+    public static final String BORROWING = "0";
+    public static final String RETURN = "1";
+    public static final String EXPIRED = "2";
+    public static final String RESERVATION = "3";
 }
