@@ -60,7 +60,7 @@ public class SecurityConfig  {
                 .and()
                 .authorizeHttpRequests()
                 // 对于登录接口 允许匿名访问
-                .requestMatchers("/system/login").anonymous()
+                .requestMatchers("/user/login").anonymous()
                 // .antMatchers("/logout").authenticated()
                 .anyRequest().authenticated();// 除上面外的所有请求全部《需要》认证即可访问
 

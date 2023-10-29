@@ -32,18 +32,23 @@ public class SystemLoginServiceImpl extends ServiceImpl<UserMapper, User> implem
 
     @Override
     public ResponseResult login(User user) {
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("number",user.getNumber());
-        map.put("type", SystemConstants.ADMIN);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("number", user.getNumber());
+        map.put("type", user.getType());
         List<User> list = getBaseMapper().selectByMap(map);
         if (list.size() == 0) {
-            return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS);
+            if (user.getType() == SystemConstants.ADMIN) {
+                return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS);
+            }
+            else if (user.getType() == SystemConstants.NORMAL) {
+                return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS2);
+            }
         }
 
         String username = list.get(0).getUserName();
         String password = user.getPassword();
 
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username,password);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
 
         // 判断是否认证通过

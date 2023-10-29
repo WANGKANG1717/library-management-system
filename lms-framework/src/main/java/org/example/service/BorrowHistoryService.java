@@ -15,5 +15,9 @@ public interface BorrowHistoryService extends IService<BorrowHistory> {
     ResponseResult getBorrowHistory(Integer pageNum, Integer pageSize, Long userId, String borrowStatus);
 
     ResponseResult addBorrowHistory(BorrowHistoryDto borrowHistoryDto);
+
+    ResponseResult returnBook(BorrowHistoryDto borrowHistoryDto);
+
+    ResponseResult getStatistics(Long userId);
 }
 

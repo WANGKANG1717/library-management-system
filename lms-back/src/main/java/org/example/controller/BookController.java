@@ -15,8 +15,8 @@ public class BookController {
 
     // 查
     @GetMapping("/list")
-    public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName, String category, String isbn, Integer inventory){
-        return bookService.listBook(pageNum, pageSize, bookName, category, isbn, inventory);
+    public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName,String author, String category, String isbn, Integer inventory){
+        return bookService.listBook(pageNum, pageSize, bookName,author, category, isbn, inventory);
     }
     @GetMapping("/get/{id}")
     public ResponseResult getBookDetail(@PathVariable("id") Long id){

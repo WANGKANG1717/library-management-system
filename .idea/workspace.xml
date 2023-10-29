@@ -4,14 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中">
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/dto/BorrowHistoryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BorrowHistoryVo.java" afterDir="false" />
+    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/25 WANGKANG&#10;1. 借阅历史增加、查询&#10;2. 暂时西安不开法更加复杂的功能">
+      <change afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BookStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/controller/BorrowHistoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BorrowHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BorrowHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/constants/SystemConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/constants/SystemConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/dto/BorrowHistoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/dto/BorrowHistoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BookVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BookVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BorrowHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BorrowHistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/SystemLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/SystemLoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-front/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-front/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +76,7 @@
     "WebServerToolWindowFactoryState": "false",
     "deletionFromPopupRequiresConfirmation": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/WANGKANG/Desktop/library-management-system/lms-framework/src/main/java/org/example/service/impl",
+    "last_opened_file_path": "C:/Users/WANGKANG/Desktop/library-management-system/lms-front/src/main/java/org/example",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,14 +102,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-front\src\main\java\org\example" />
       <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-framework\src\main\java\org\example\service\impl" />
       <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-back\src\main\java\org\example" />
       <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-framework\src\main\java\org\example" />
       <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-framework\src\main\java\org\example\handler" />
-      <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-framework\src\main\java\org\example\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-framework\src\main\java\org\example\domain" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,7 +122,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackMain">
+  <component name="RunManager" selected="Spring Boot.FrontMain">
     <configuration name="BackMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="lms-back" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.BackMain" />
@@ -135,8 +151,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BackMain" />
         <item itemvalue="Spring Boot.FrontMain" />
+        <item itemvalue="Spring Boot.BackMain" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +169,7 @@
       <workItem from="1698040318806" duration="18693000" />
       <workItem from="1698144288505" duration="7577000" />
       <workItem from="1698215248035" duration="10364000" />
-      <workItem from="1698545115865" duration="2451000" />
+      <workItem from="1698545115865" duration="14622000" />
     </task>
     <task id="LOCAL-00001" summary="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发">
       <created>1698144957093</created>
@@ -183,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698229521884</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2023/10/25 WANGKANG&#10;1. 借阅历史增加、查询&#10;2. 暂时西安不开法更加复杂的功能">
+      <created>1698549702874</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698549702874</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,15 +241,21 @@
     <MESSAGE value="2023/10/25 WANGKANG&#10;1. 完成图书的增删改查基本操作" />
     <MESSAGE value="2023/10/25 WANGKANG&#10;1. 完成用户的增删改查基本操作" />
     <MESSAGE value="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中" />
+    <MESSAGE value="2023/10/25 WANGKANG&#10;1. 借阅历史增加、查询&#10;2. 暂时西安不开法更加复杂的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/10/25 WANGKANG&#10;1. 借阅历史增加、查询&#10;2. 暂时西安不开法更加复杂的功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BookServiceImpl.java</url>
-          <line>80</line>
+          <line>81</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

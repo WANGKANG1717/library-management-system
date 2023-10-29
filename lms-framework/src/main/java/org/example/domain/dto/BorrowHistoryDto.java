@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BorrowHistoryDto  {
+public class BorrowHistoryDto {
     private Long userId;
-    
+
     private Long bookId;
 }

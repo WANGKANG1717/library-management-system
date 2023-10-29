@@ -25,9 +25,15 @@ public enum AppHttpCodeEnum {
     NUMBER_NOT_NULL1(516, "工号不能为空"),
     NUMBER_NOT_NULL2(517, "学号不能为空"),
     NUMBER_NOT_EXISTS(518, "工号不存在"),
+    NUMBER_NOT_EXISTS2(518, "学号不存在"),
     BOOKNAME_IS_NULL(519, "书名为空"),
     ISBN_IS_NULL(520, "isbn为空"),
-    NUMBER_EXISTS(521, "编号已存在");
+    NUMBER_EXISTS(521, "编号已存在"),
+    NO_REMAININGTIMES(522, "剩余借阅次数不足"),
+    NO_INVENTORY(523, "没有库存"),
+    ALEARDY_BORROW(524, "不可重复借同一本书"),
+    NOT_BORROW(525, "还没有借阅此书"),
+    NO_USER_ID(526, "没有用户id");
     int code;
     String msg;
 

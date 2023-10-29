@@ -28,9 +28,10 @@ import java.util.List;
 @Service("bookService")
 public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements BookService {
     @Override
-    public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName, String category, String isbn, Integer inventory) {
+    public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName,String author, String category, String isbn, Integer inventory) {
         LambdaQueryWrapper<Book> queryWrapper = new LambdaQueryWrapper<Book>();
         queryWrapper.like(StringUtils.hasText(bookName), Book::getBookName, bookName);
+        queryWrapper.like(StringUtils.hasText(author), Book::getAuthor, author);
         queryWrapper.like(StringUtils.hasText(category), Book::getCategory, category);
         queryWrapper.eq(StringUtils.hasText(isbn), Book::getIsbn, isbn);
         queryWrapper.eq(inventory !=null && inventory>=0, Book::getInventory, inventory);

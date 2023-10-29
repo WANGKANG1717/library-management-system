@@ -12,7 +12,7 @@ import org.example.domain.entity.Book;
  * @since 2023-10-24 20:56:22
  */
 public interface BookService extends IService<Book> {
-    ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName, String category, String isbn, Integer inventory);
+    ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName,String author, String category, String isbn, Integer inventory);
 
     ResponseResult deleteBook(Long id);
 

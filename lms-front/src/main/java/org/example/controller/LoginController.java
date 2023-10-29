@@ -2,22 +2,16 @@ package org.example.controller;
 
 import org.example.constants.SystemConstants;
 import org.example.domain.ResponseResult;
-import org.example.domain.entity.LoginUser;
 import org.example.domain.entity.User;
 import org.example.enums.AppHttpCodeEnum;
 import org.example.exception.SystemException;
 import org.example.service.LoginService;
-import org.example.utils.BeanCopyUtils;
 import org.example.utils.RedisCache;
-import org.example.utils.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 public class LoginController {
@@ -26,7 +20,7 @@ public class LoginController {
     @Autowired
     private RedisCache redisCache;
 
-    @PostMapping("system/login")
+    @PostMapping("/user/login")
     public ResponseResult login(@RequestBody User user) {
         if (!StringUtils.hasText(user.getNumber())) {
             // 提示 需要传工号
@@ -36,10 +30,10 @@ public class LoginController {
              // 提示 需要传工号
             throw new SystemException(AppHttpCodeEnum.PASSWORD_NOT_NULL);
         }
-        user.setType(SystemConstants.ADMIN);
+        user.setType(SystemConstants.NORMAL);
         return loginService.login(user);
     }
-    @PostMapping("system/logout")
+    @PostMapping("/user/logout")
     public ResponseResult logout() {
         return loginService.logout();
     }
