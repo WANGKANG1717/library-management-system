@@ -26,6 +26,8 @@ public class BorrowHistory  {
     private Long bookId;
     
     private Date reservationTime;
+
+    private Date reservationToTime;
     
     private Date borrowDate;
     

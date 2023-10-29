@@ -19,5 +19,7 @@ public interface BorrowHistoryService extends IService<BorrowHistory> {
     ResponseResult returnBook(BorrowHistoryDto borrowHistoryDto);
 
     ResponseResult getStatistics(Long userId);
+
+    ResponseResult reserveBook(BorrowHistoryDto borrowHistoryDto);
 }
 

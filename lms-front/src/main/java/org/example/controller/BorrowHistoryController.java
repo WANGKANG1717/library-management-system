@@ -33,4 +33,9 @@ public class BorrowHistoryController {
     public ResponseResult getStatistics(Long userId) {
         return borrowHistoryService.getStatistics(userId);
     }
+
+    @PostMapping ("/reserve")
+    public ResponseResult reserveBook(@RequestBody BorrowHistoryDto borrowHistoryDto) {
+        return borrowHistoryService.reserveBook(borrowHistoryDto);
+    }
 }

@@ -33,7 +33,11 @@ public enum AppHttpCodeEnum {
     NO_INVENTORY(523, "没有库存"),
     ALEARDY_BORROW(524, "不可重复借同一本书"),
     NOT_BORROW(525, "还没有借阅此书"),
-    NO_USER_ID(526, "没有用户id");
+    NO_USER_ID(526, "没有用户id"),
+    NO_NEED_RESERVE(527, "不需要预约"),
+    MAX_RESERVATION(528, "已经达到最大预约数量"),
+    NO_REPEAT_RESERVATION(529, "禁止重复预约"),
+    RESERVATION_BY_OTHER(530, "已经被其他人预约了，看看其他书吧");
     int code;
     String msg;
 
