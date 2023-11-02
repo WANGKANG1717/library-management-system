@@ -22,7 +22,7 @@ import java.util.List;
 public class SecurityConfig {
     // 白名单放行
     public static final List<String> WHITE_LIST = List.of("/user/login");
-    public static final List<String> DOC_WHITE_LIST = List.of("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**");
+    public static final List<String> DOC_WHITE_LIST = List.of("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/doc.html", "/webjars/**", "doc.html#/**");
 
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
