@@ -21,6 +21,12 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
       id-type: auto
+
+# 配置swagger文档的访问路径，访问地址：http://127.0.0.1:{server.port}/swagger.html
+springdoc:
+  swagger-ui:
+    path: /swagger.html
+
 oss:
   accessKey: "I5ar_vimHClfBgXWgapXE2I1-YOvOIY5ZU6xhgs9"
   secretKey: "VBaGIjayq0gsEai25onaajdJ3GRErAX_PgtdEkv8"

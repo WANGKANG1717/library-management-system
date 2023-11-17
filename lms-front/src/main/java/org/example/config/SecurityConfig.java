@@ -1,4 +1,5 @@
 package org.example.config;
+
 import org.example.filter.JwtAuthenticationTokenFilter;
 import org.example.handler.security.AccessDeniedHandlerImpl;
 import org.example.handler.security.AuthenticationEntryPointImpl;
@@ -16,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig  {
+public class SecurityConfig {
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
     @Autowired
@@ -44,7 +45,8 @@ public class SecurityConfig  {
      * 认证管理器，登录的时候参数会传给 authenticationManager
      */
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
+            throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
@@ -62,17 +64,17 @@ public class SecurityConfig  {
                 // 对于登录接口 允许匿名访问
                 .requestMatchers("/user/login").anonymous()
                 // .antMatchers("/logout").authenticated()
-                .anyRequest().authenticated();// 除上面外的所有请求全部《需要》认证即可访问
+                // .anyRequest().authenticated();// 除上面外的所有请求全部《需要》认证即可访问
+                .anyRequest().permitAll();
 
         // 配置异常处理器
         http.exceptionHandling()
                 .authenticationEntryPoint(authenticationEntryPoint)
                 .accessDeniedHandler(accessDeniedHandler);
 
-        http.logout().disable();        // 用来关闭springSecurity默认的logout接口，避免发生冲突
+        http.logout().disable(); // 用来关闭springSecurity默认的logout接口，避免发生冲突
         //
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 }
-

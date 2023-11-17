@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/29 WANGKANG&#10;a. 用户登录、登出&#10;b. 查询用户信息、更新用户信息&#10;c. 搜索图书。可以根据书名、作者或ISBN来查找图书。&#10;d. 查看图书的详细信息，包括可借阅的数量和是否已被借阅完&#10;e. 信阅图书、如果库存充是，读者可以借同一本或多本图书。&#10;f. 查看自己的借阅历史，但括借阅日阴、还书日期、借阅状态等。&#10;g. 归还图书，读者可以将已借阅的图书归还给图书馆。">
+    <list default="true" id="79ea897c-4d68-4cdf-b5be-d991cc1fc37a" name="更改" comment="2023/10/29 WANGKANG&#10;a. 可以提前预约已被借阅的图书。&#10;b. 借阅功能完善">
+      <change afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/BorrowHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/entity/BorrowHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BorrowHistoryVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/domain/vo/BorrowHistoryVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/enums/AppHttpCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BorrowHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/BorrowHistoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/service/impl/BorrowHistoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lms-front/src/main/java/org/example/controller/BorrowHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/controller/BorrowHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-back/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-back/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-framework/src/main/java/org/example/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-framework/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-front/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-front/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-front/src/main/java/org/example/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lms-front/src/main/java/org/example/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lms-front/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lms-front/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -61,6 +67,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "deletionFromPopupRequiresConfirmation": "false",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/WANGKANG/Desktop/library-management-system/lms-front/src/main/java/org/example",
@@ -74,7 +82,7 @@
     "project.structure.side.proportion": "0.24597701",
     "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "settings.editor.splitter.proportion": "0.25382262",
-    "spring.configuration.checksum": "c93e7492c8581a768c68c377c1b34ad7",
+    "spring.configuration.checksum": "e4d4d9568eba4369370a46a3a61e30c5",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -97,6 +105,12 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\WANGKANG\Desktop\library-management-system\lms-framework\src\main\java\org\example\domain" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example.controller" />
@@ -156,7 +170,14 @@
       <workItem from="1698040318806" duration="18693000" />
       <workItem from="1698144288505" duration="7577000" />
       <workItem from="1698215248035" duration="10364000" />
-      <workItem from="1698545115865" duration="19393000" />
+      <workItem from="1698545115865" duration="19406000" />
+      <workItem from="1698744178148" duration="3693000" />
+      <workItem from="1698757010467" duration="4662000" />
+      <workItem from="1698802635850" duration="95000" />
+      <workItem from="1698808604590" duration="3271000" />
+      <workItem from="1698840672685" duration="59000" />
+      <workItem from="1698888089980" duration="1717000" />
+      <workItem from="1700199017454" duration="66000" />
     </task>
     <task id="LOCAL-00001" summary="2023/10/24 WANGKANG&#10;1. 搭建基本框架&#10;2. 包依赖&#10;3. 多模块设计&#10;4. sptingsecurity&#10;5. 登录验证&#10;6. 测试接口&#10;7. 规范化web开发">
       <created>1698144957093</created>
@@ -200,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698577901921</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2023/10/29 WANGKANG&#10;a. 可以提前预约已被借阅的图书。&#10;b. 借阅功能完善">
+      <created>1698582677834</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698582677834</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +265,8 @@
     <MESSAGE value="2023/10/25 WANGKANG&#10;1. 借阅历史功能开发中" />
     <MESSAGE value="2023/10/25 WANGKANG&#10;1. 借阅历史增加、查询&#10;2. 暂时西安不开法更加复杂的功能" />
     <MESSAGE value="2023/10/29 WANGKANG&#10;a. 用户登录、登出&#10;b. 查询用户信息、更新用户信息&#10;c. 搜索图书。可以根据书名、作者或ISBN来查找图书。&#10;d. 查看图书的详细信息，包括可借阅的数量和是否已被借阅完&#10;e. 信阅图书、如果库存充是，读者可以借同一本或多本图书。&#10;f. 查看自己的借阅历史，但括借阅日阴、还书日期、借阅状态等。&#10;g. 归还图书，读者可以将已借阅的图书归还给图书馆。" />
-    <option name="LAST_COMMIT_MESSAGE" value="2023/10/29 WANGKANG&#10;a. 用户登录、登出&#10;b. 查询用户信息、更新用户信息&#10;c. 搜索图书。可以根据书名、作者或ISBN来查找图书。&#10;d. 查看图书的详细信息，包括可借阅的数量和是否已被借阅完&#10;e. 信阅图书、如果库存充是，读者可以借同一本或多本图书。&#10;f. 查看自己的借阅历史，但括借阅日阴、还书日期、借阅状态等。&#10;g. 归还图书，读者可以将已借阅的图书归还给图书馆。" />
+    <MESSAGE value="2023/10/29 WANGKANG&#10;a. 可以提前预约已被借阅的图书。&#10;b. 借阅功能完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/10/29 WANGKANG&#10;a. 可以提前预约已被借阅的图书。&#10;b. 借阅功能完善" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -252,11 +281,17 @@
           <line>53</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lms-front/src/main/java/org/example/filter/JwtAuthenticationTokenFilter.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.example.domain.entity.User" memberName="userName" />
+        <PinnedItemInfo parentTag="org.springframework.data.redis.core.RedisTemplate" memberName="valueSerializer" />
         <PinnedItemInfo parentTag="org.example.domain.entity.User" memberName="password" />
       </pinned-members>
     </pin-to-top-manager>
