@@ -1,8 +1,11 @@
 package com.example.controller;
 
+import com.example.constants.SystemConstants;
 import com.example.domain.ResponseResult;
 import com.example.domain.dto.UserDto;
+import com.example.domain.entity.User;
 import com.example.service.UserService;
+import com.example.utils.BeanCopyUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -16,6 +19,15 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @PostMapping
+    @Operation(summary = "添加普通用户")
+    public ResponseResult addUser(@RequestBody UserDto userDto) {
+        User user = BeanCopyUtils.copyBean(userDto, User.class);
+        user.setId(null);
+        user.setType(SystemConstants.NORMAL);
+        return userService.addUser(user);
+    }
 
     @GetMapping("/{id}")
     @Operation(summary = "根据id拿到用户详细信息")

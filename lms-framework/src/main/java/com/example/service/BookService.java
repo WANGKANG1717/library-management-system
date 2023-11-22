@@ -5,6 +5,8 @@ import com.example.domain.ResponseResult;
 import com.example.domain.dto.BookDto;
 import com.example.domain.entity.Book;
 
+import java.util.List;
+
 /**
  * (Book)表服务接口
  *
@@ -21,5 +23,9 @@ public interface BookService extends IService<Book> {
     ResponseResult addBook(BookDto bookDto);
 
     ResponseResult getBookDetail(Long id);
+
+    ResponseResult bookCount();
+
+    ResponseResult deleteBatchBooks(List<Long> bookIds);
 }
 

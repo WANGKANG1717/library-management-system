@@ -14,7 +14,7 @@ import com.example.domain.entity.User;
 public interface UserService extends IService<User> {
     ResponseResult listUser(Integer pageNum, Integer pageSize, String userName, String status, String type);
 
-    ResponseResult addUser(UserDto userDto);
+    ResponseResult addUser(User user);
 
     ResponseResult deleteUser(Long id);
 

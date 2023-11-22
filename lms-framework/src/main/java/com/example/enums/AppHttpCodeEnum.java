@@ -13,7 +13,7 @@ public enum AppHttpCodeEnum {
     REQUIRE_USERNAME(504, "必需填写用户名"),
     LOGIN_ERROR(505, "用户名或密码错误"),
     CONTENT_NOT_NULL(506, "评论内容不能为空"),
-    FILE_TYPE_ERROR(507, "文件类型错误，请上传png文件"),
+    FILE_TYPE_ERROR(507, "文件类型错误，请上传png,jpg,jpeg,gif,bmp格式图片"),
     USERNAME_NOT_NULL(508, "用户名不能为空"),
     NICKNAME_NOT_NULL(509, "昵称不能为空"),
     PASSWORD_NOT_NULL(510, "密码不能为空"),
@@ -37,7 +37,8 @@ public enum AppHttpCodeEnum {
     NO_NEED_RESERVE(527, "不需要预约"),
     MAX_RESERVATION(528, "已经达到最大预约数量"),
     NO_REPEAT_RESERVATION(529, "禁止重复预约"),
-    RESERVATION_BY_OTHER(530, "已经被其他人预约了，看看其他书吧");
+    RESERVATION_BY_OTHER(530, "已经被其他人预约了，看看其他书吧"),
+    FILE_UPLOAD_ERROR(531, "文件上传失败");
     int code;
     String msg;
 

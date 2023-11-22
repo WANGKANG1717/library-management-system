@@ -53,8 +53,10 @@ public class TokenUtil {
     public static String genAccessToken(String userId) {
         // 令牌id
         String uuid = UUID.randomUUID().toString();
+//        System.out.println(Instant.now());
+//        System.out.println(Instant.now().plusSeconds(JWT_TTL));
         Date exprireDate = Date.from(Instant.now().plusSeconds(JWT_TTL)); // 单位为秒
-
+//        System.out.println(exprireDate);
         return Jwts.builder()
                 // 设置头部信息header
                 .header().add("typ", "JWT").add("alg", "HS256").and()

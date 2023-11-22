@@ -3,6 +3,7 @@ package com.example.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.constants.SystemConstants;
 import com.example.domain.ResponseResult;
 import com.example.domain.dto.UserDto;
 import com.example.domain.entity.User;
@@ -50,10 +51,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public ResponseResult addUser(UserDto userDto) {
-        User user = BeanCopyUtils.copyBean(userDto, User.class);
-        user.setId(null);
-        // user.setType(SystemConstants.ADMIN);
+    public ResponseResult addUser(User user) {
         // 对数据进行非空判断
         if (!StringUtils.hasText(user.getNumber())) {
             throw new SystemException(AppHttpCodeEnum.NUMBER_NOT_NULL1);

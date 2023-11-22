@@ -1,8 +1,12 @@
 package com.example.controller;
 
+import com.example.constants.SystemConstants;
 import com.example.domain.ResponseResult;
 import com.example.domain.dto.UserDto;
+import com.example.domain.entity.User;
 import com.example.service.UserService;
+import com.example.utils.BeanCopyUtils;
+import com.example.utils.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +23,10 @@ public class UserController {
 
     @PostMapping
     public ResponseResult addUser(@RequestBody UserDto userDto) {
-        return userService.addUser(userDto);
+        User user = BeanCopyUtils.copyBean(userDto, User.class);
+        user.setId(null);
+        user.setType(SystemConstants.ADMIN);
+        return userService.addUser(user);
     }
 
     @DeleteMapping("/{id}")
@@ -30,6 +37,12 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseResult getUserDetail(@PathVariable("id") Long id) {
         return userService.getUserDetail(id);
+    }
+
+    @GetMapping()
+    public ResponseResult getCurrentUserDetail() {
+        Long userId = SecurityUtils.getUserId();
+        return userService.getUserDetail(userId);
     }
 
     @PutMapping

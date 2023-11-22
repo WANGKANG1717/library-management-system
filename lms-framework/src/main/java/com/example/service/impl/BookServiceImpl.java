@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.domain.ResponseResult;
+import com.example.domain.dto.BookCategoryDto;
 import com.example.domain.dto.BookDto;
 import com.example.domain.entity.Book;
 import com.example.domain.vo.BookVo;
@@ -27,13 +28,13 @@ import java.util.List;
 @Service("bookService")
 public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements BookService {
     @Override
-    public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName,String author, String category, String isbn, Integer inventory) {
+    public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName, String author, String category, String isbn, Integer inventory) {
         LambdaQueryWrapper<Book> queryWrapper = new LambdaQueryWrapper<Book>();
         queryWrapper.like(StringUtils.hasText(bookName), Book::getBookName, bookName);
         queryWrapper.like(StringUtils.hasText(author), Book::getAuthor, author);
         queryWrapper.like(StringUtils.hasText(category), Book::getCategory, category);
         queryWrapper.eq(StringUtils.hasText(isbn), Book::getIsbn, isbn);
-        queryWrapper.eq(inventory !=null && inventory>=0, Book::getInventory, inventory);
+        queryWrapper.eq(inventory != null && inventory >= 0, Book::getInventory, inventory);
         // 需要用户分页列表接口
         Page page = new Page(pageNum, pageSize);
         page(page, queryWrapper);
@@ -61,7 +62,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
         Book book = BeanCopyUtils.copyBean(bookDto, Book.class);
         book.setId(null);
         // 为了赶时间，暂时不对数据进行过多的校验，主要在于迅速的完成任务
-        if (!StringUtils.hasText(book.getBookName())){
+        if (!StringUtils.hasText(book.getBookName())) {
             return ResponseResult.errorResult(AppHttpCodeEnum.BOOKNAME_IS_NULL);
         }
         if (!StringUtils.hasText(book.getIsbn())) {
@@ -74,10 +75,24 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     @Override
     public ResponseResult getBookDetail(Long id) {
         Book book = getById(id);
-        if (book ==null){
+        if (book == null) {
             return ResponseResult.okResult();
         }
         BookVo bookVo = BeanCopyUtils.copyBean(book, BookVo.class);
         return ResponseResult.okResult(bookVo);
+    }
+
+    @Override
+    public ResponseResult bookCount() {
+        List<BookCategoryDto> bookCategoryDtos = getBaseMapper().countCategory();
+        return ResponseResult.okResult(bookCategoryDtos);
+    }
+
+    @Override
+    public ResponseResult deleteBatchBooks(List<Long> bookIds) {
+        for (Long book_id : bookIds) {
+            removeById(book_id);
+        }
+        return ResponseResult.okResult();
     }
 }
