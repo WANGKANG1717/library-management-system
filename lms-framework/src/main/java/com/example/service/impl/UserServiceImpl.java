@@ -14,9 +14,11 @@ import com.example.exception.SystemException;
 import com.example.mapper.UserMapper;
 import com.example.service.UserService;
 import com.example.utils.BeanCopyUtils;
+import com.example.utils.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
@@ -33,6 +35,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional
     public ResponseResult listUser(Integer pageNum, Integer pageSize, String userName, String status, String type) {
         // 可以根据用户名模糊搜索
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
@@ -51,6 +54,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
+    @Transactional
     public ResponseResult addUser(User user) {
         // 对数据进行非空判断
         if (!StringUtils.hasText(user.getNumber())) {
@@ -77,12 +81,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
+    @Transactional
     public ResponseResult deleteUser(Long id) {
         removeById(id);
         return ResponseResult.okResult();
     }
 
     @Override
+    @Transactional
     public ResponseResult getUserDetail(Long id) {
         User user = getById(id);
         if (user == null) {
@@ -93,6 +99,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
+    @Transactional
     public ResponseResult updateUser(UserDto userDto) {
         User user = BeanCopyUtils.copyBean(userDto, User.class);
         // 对数据进行非空判断
@@ -106,13 +113,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         //     throw new SystemException(AppHttpCodeEnum.PASSWORD_NOT_NULL);
         // }
         // 对数据是否存在的判断
-        if (numberExist(user.getNumber())) {
-            throw new SystemException(AppHttpCodeEnum.NUMBER_EXISTS);
-        }
-        if (userNameExist(user.getUserName())) {
-            throw new SystemException(AppHttpCodeEnum.USERNAME_EXIST);
-        }
-        if (user.getPassword() != null) {
+//        if (numberExist(user.getNumber())) {
+//            throw new SystemException(AppHttpCodeEnum.NUMBER_EXISTS);
+//        String userName = SecurityUtils.getLoginUser().getUser().getUserName();
+//        if (!userName.equals(user.getUserName()) &&  userNameExist(user.getUserName())) {
+//            throw new SystemException(AppHttpCodeEnum.USERNAME_EXIST);
+//        }
+        if (StringUtils.hasText(user.getPassword())) {
             String encodePassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encodePassword);
         }

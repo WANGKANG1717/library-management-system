@@ -14,8 +14,8 @@ public class BorrowHistoryController {
     BorrowHistoryService borrowHistoryService;
 
     @GetMapping
-    public ResponseResult getBorrowHistory(Integer pageNum, Integer pageSize, Long userId,String borrowStatus){
-        return borrowHistoryService.getBorrowHistory(pageNum, pageSize, userId, borrowStatus);
+    public ResponseResult getBorrowHistory(Integer pageNum, Integer pageSize, Long userId, Long bookId, String borrowStatus){
+        return borrowHistoryService.getBorrowHistory(pageNum, pageSize, userId, bookId, borrowStatus);
     }
 
     @PostMapping

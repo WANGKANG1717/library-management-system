@@ -14,6 +14,7 @@ import com.example.mapper.BookMapper;
 import com.example.service.BookService;
 import com.example.utils.BeanCopyUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
@@ -28,6 +29,7 @@ import java.util.List;
 @Service("bookService")
 public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements BookService {
     @Override
+    @Transactional
     public ResponseResult listBook(Integer pageNum, Integer pageSize, String bookName, String author, String category, String isbn, Integer inventory) {
         LambdaQueryWrapper<Book> queryWrapper = new LambdaQueryWrapper<Book>();
         queryWrapper.like(StringUtils.hasText(bookName), Book::getBookName, bookName);
@@ -45,12 +47,14 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     }
 
     @Override
+    @Transactional
     public ResponseResult deleteBook(Long id) {
         removeById(id);
         return ResponseResult.okResult();
     }
 
     @Override
+    @Transactional
     public ResponseResult updateBook(BookDto bookDto) {
         Book book = BeanCopyUtils.copyBean(bookDto, Book.class);
         updateById(book);
@@ -58,6 +62,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     }
 
     @Override
+    @Transactional
     public ResponseResult addBook(BookDto bookDto) {
         Book book = BeanCopyUtils.copyBean(bookDto, Book.class);
         book.setId(null);
@@ -73,6 +78,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     }
 
     @Override
+    @Transactional
     public ResponseResult getBookDetail(Long id) {
         Book book = getById(id);
         if (book == null) {
@@ -83,12 +89,14 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     }
 
     @Override
+    @Transactional
     public ResponseResult bookCount() {
         List<BookCategoryDto> bookCategoryDtos = getBaseMapper().countCategory();
         return ResponseResult.okResult(bookCategoryDtos);
     }
 
     @Override
+    @Transactional
     public ResponseResult deleteBatchBooks(List<Long> bookIds) {
         for (Long book_id : bookIds) {
             removeById(book_id);

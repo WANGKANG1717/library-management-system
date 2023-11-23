@@ -49,7 +49,8 @@ public class BorrowHistoryServiceImpl extends ServiceImpl<BorrowHistoryMapper, B
     BookService bookService;
 
     @Override
-    public ResponseResult getBorrowHistory(Integer pageNum, Integer pageSize, Long userId, String borrowStatus) {
+    @Transactional
+    public ResponseResult getBorrowHistory(Integer pageNum, Integer pageSize, Long userId, Long bookId, String borrowStatus) {
         // 获取当前登录的用户
         User loginUser = SecurityUtils.getLoginUser().getUser();
         // 如果是普通用户需要先判断当前用户是不是登录用户
@@ -60,7 +61,8 @@ public class BorrowHistoryServiceImpl extends ServiceImpl<BorrowHistoryMapper, B
         }
         // 可以根据用户名模糊搜索
         LambdaQueryWrapper<BorrowHistory> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(BorrowHistory::getUserId, userId);
+        queryWrapper.eq(!Objects.isNull(userId), BorrowHistory::getUserId, userId);
+        queryWrapper.eq(!Objects.isNull(bookId), BorrowHistory::getBookId, bookId);
         queryWrapper.like(StringUtils.hasText(borrowStatus), BorrowHistory::getBorrowStatus, borrowStatus);
 
         Page page = new Page(pageNum, pageSize);
@@ -136,7 +138,7 @@ public class BorrowHistoryServiceImpl extends ServiceImpl<BorrowHistoryMapper, B
             updateWrapper.eq(BorrowHistory::getBookId, borrowHistory.getBookId());
             updateWrapper.eq(BorrowHistory::getBorrowStatus, SystemConstants.RESERVATION);
             updateWrapper.set(BorrowHistory::getBorrowDate, borrowHistory.getBorrowDate());
-            updateWrapper.set(BorrowHistory::getBorrowStatus,borrowHistory.getBorrowStatus());
+            updateWrapper.set(BorrowHistory::getBorrowStatus, borrowHistory.getBorrowStatus());
             update(updateWrapper);
         } else {
             save(borrowHistory);
@@ -145,6 +147,7 @@ public class BorrowHistoryServiceImpl extends ServiceImpl<BorrowHistoryMapper, B
     }
 
     @Override
+    @Transactional
     public ResponseResult returnBook(BorrowHistoryDto borrowHistoryDto) {
         // 注意 借书的时候，需要确保当前登录用户和借书id一致
         // 获取当前登录的用户
@@ -185,6 +188,7 @@ public class BorrowHistoryServiceImpl extends ServiceImpl<BorrowHistoryMapper, B
     }
 
     @Override
+    @Transactional
     public ResponseResult getStatistics(Long userId) {
         if (userId == null) {
             return ResponseResult.errorResult(AppHttpCodeEnum.NO_USER_ID);
@@ -214,6 +218,7 @@ public class BorrowHistoryServiceImpl extends ServiceImpl<BorrowHistoryMapper, B
     }
 
     @Override
+    @Transactional
     public ResponseResult reserveBook(BorrowHistoryDto borrowHistoryDto) {
         // 获取当前登录的用户
         User loginUser = SecurityUtils.getLoginUser().getUser();

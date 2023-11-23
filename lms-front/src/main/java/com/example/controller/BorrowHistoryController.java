@@ -23,8 +23,9 @@ public class BorrowHistoryController {
     public ResponseResult getBorrowHistory(@Parameter(description = "第几页") Integer pageNum,
                                            @Parameter(description = "每页大小") Integer pageSize,
                                            @Parameter(description = "用户id") Long userId,
+                                           @Parameter(description = "图书id") Long bookId,
                                            @Parameter(description = "借阅状态 0已借出 / 1已归还 / 2过期未还 / 3已预约") String borrowStatus) {
-        return borrowHistoryService.getBorrowHistory(pageNum, pageSize, userId, borrowStatus);
+        return borrowHistoryService.getBorrowHistory(pageNum, pageSize, userId, bookId, borrowStatus);
     }
 
     @PostMapping

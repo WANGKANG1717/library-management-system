@@ -16,6 +16,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -28,6 +29,7 @@ public class SystemLoginServiceImpl extends ServiceImpl<UserMapper, User> implem
     private RedisCache redisCache;
 
     @Override
+    @Transactional
     public ResponseResult login(User user) {
         Map<String, Object> map = new HashMap<>();
         map.put("number", user.getNumber());
@@ -36,8 +38,7 @@ public class SystemLoginServiceImpl extends ServiceImpl<UserMapper, User> implem
         if (list.size() == 0) {
             if (user.getType() == SystemConstants.ADMIN) {
                 return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS);
-            }
-            else if (user.getType() == SystemConstants.NORMAL) {
+            } else if (user.getType() == SystemConstants.NORMAL) {
                 return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS2);
             }
         }
@@ -66,6 +67,7 @@ public class SystemLoginServiceImpl extends ServiceImpl<UserMapper, User> implem
     }
 
     @Override
+    @Transactional
     public ResponseResult logout() {
         // 获取当前登录用户的id
         Long userId = SecurityUtils.getUserId();

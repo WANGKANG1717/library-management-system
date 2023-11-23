@@ -12,7 +12,7 @@ import com.example.domain.entity.BorrowHistory;
  * @since 2023-10-25 17:11:41
  */
 public interface BorrowHistoryService extends IService<BorrowHistory> {
-    ResponseResult getBorrowHistory(Integer pageNum, Integer pageSize, Long userId, String borrowStatus);
+    ResponseResult getBorrowHistory(Integer pageNum, Integer pageSize, Long userId, Long bookId, String borrowStatus);
 
     ResponseResult addBorrowHistory(BorrowHistoryDto borrowHistoryDto);
 

@@ -5,6 +5,7 @@ import com.example.domain.dto.BookCategoryDto;
 import org.apache.ibatis.annotations.Mapper;
 import com.example.domain.entity.Book;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
