@@ -25,7 +25,7 @@ public class UserController {
     public ResponseResult addUser(@RequestBody UserDto userDto) {
         User user = BeanCopyUtils.copyBean(userDto, User.class);
         user.setId(null);
-        user.setType(SystemConstants.ADMIN);
+//        user.setType(SystemConstants.ADMIN);
         return userService.addUser(user);
     }
 

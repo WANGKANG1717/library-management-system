@@ -45,6 +45,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             e.printStackTrace();
             // token超时  token非法
             // 响应告诉前端需要重新登录
+            System.out.println("异常1");
             ResponseResult result = ResponseResult.errorResult(AppHttpCodeEnum.NEED_LOGIN);
             WebUtils.renderString(response, JSON.toJSONString(result));
             return;
@@ -54,6 +55,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         LoginUser loginUser = redisCache.getCacheObject("login:" + userId);
         // 如果获取不到
         if (Objects.isNull(loginUser)) {
+            System.out.println("异常2");
             // 说明登录过期  提示重新登录
             ResponseResult result = ResponseResult.errorResult(AppHttpCodeEnum.NEED_LOGIN);
             WebUtils.renderString(response, JSON.toJSONString(result));
