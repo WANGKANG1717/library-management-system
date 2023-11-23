@@ -123,6 +123,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             String encodePassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encodePassword);
         }
+        else{
+            user.setPassword(null);
+        }
         updateById(user);
         return ResponseResult.okResult();
     }
