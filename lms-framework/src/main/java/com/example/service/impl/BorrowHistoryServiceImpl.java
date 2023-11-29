@@ -183,6 +183,7 @@ public class BorrowHistoryServiceImpl extends ServiceImpl<BorrowHistoryMapper, B
         updateWrapper.eq(BorrowHistory::getUserId, borrowHistory.getUserId());
         updateWrapper.eq(BorrowHistory::getBookId, borrowHistory.getBookId());
         updateWrapper.set(BorrowHistory::getBorrowStatus, borrowHistory.getBorrowStatus());
+        updateWrapper.set(BorrowHistory::getReturnDate, borrowHistory.getReturnDate());
         update(updateWrapper);
         return ResponseResult.okResult();
     }

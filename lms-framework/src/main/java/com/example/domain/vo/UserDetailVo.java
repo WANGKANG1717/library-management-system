@@ -36,4 +36,14 @@ public class UserDetailVo {
     private Long updateBy;
     // 更新时间
     private Date updateTime;
+        // 剩余借阅次数
+    private Integer remainingTimes;
+    // 最大借阅次数 默认为6
+    private Integer maxBorrowTimes;
+    // 当前借阅数
+    private Integer currentBorrowTimes;
+    // 总借阅数
+    private Integer totalBorrowTimes;
+    // 总逾期数
+    private Integer overdueBorrowTimes;
 }

@@ -13,7 +13,8 @@ spring:
   data:
     redis:
       host: 101.35.169.211
-      port: 6379
+      port: 16379
+      database: 0
       password:
       jedis:
         pool:
@@ -51,3 +52,9 @@ oss:
   secretKey: "VBaGIjayq0gsEai25onaajdJ3GRErAX_PgtdEkv8"
   bucket: "wk-blog123"
   baseUploadUrl: "http://s1fdhcbff.hd-bkt.clouddn.com/"
+
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG

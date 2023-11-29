@@ -15,7 +15,7 @@ spring:
   data:
     redis:
       host: 101.35.169.211
-      port: 6379
+      port: 16379
       password:
       jedis:
         pool:
@@ -41,3 +41,8 @@ mybatis-plus:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG

@@ -37,6 +37,8 @@ public class User  {
     private String avatar;
     // 用户性别（0男，1女，2未知）
     private String sex;
+    // 年龄
+    private Integer age;
     // 用户类型：0代表普通用户，1代表管理员
     private String type;
     // 手机号
@@ -59,8 +61,16 @@ public class User  {
     // 更新时间
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;
-    // 剩余借阅次数
-    private Integer remainingTimes;
     // 删除标志（0代表未删除，1代表已删除）
     private Integer delFlag;
+    // 剩余借阅次数
+    private Integer remainingTimes;
+    // 最大借阅次数 默认为6
+    private Integer maxBorrowTimes;
+    // 当前借阅数
+    private Integer currentBorrowTimes;
+    // 总借阅数
+    private Integer totalBorrowTimes;
+    // 总逾期数
+    private Integer overdueBorrowTimes;
 }

@@ -20,6 +20,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping
+    @Operation(summary = "根据id拿到用户详细信息")
+    public ResponseResult getLoginUserDetail() {
+        return userService.getLoginUserDetail();
+    }
+
     @PostMapping
     @Operation(summary = "添加普通用户")
     public ResponseResult addUser(@RequestBody UserDto userDto) {

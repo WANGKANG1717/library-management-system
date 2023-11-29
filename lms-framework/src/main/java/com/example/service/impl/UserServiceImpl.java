@@ -130,6 +130,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return ResponseResult.okResult();
     }
 
+    @Override
+    public ResponseResult getLoginUserDetail() {
+        try {
+            User user = SecurityUtils.getLoginUser().getUser();
+            UserDetailVo userDetailVo = BeanCopyUtils.copyBean(user, UserDetailVo.class);
+            return ResponseResult.okResult(userDetailVo);
+        }
+        catch (Exception e){
+            return ResponseResult.errorResult(AppHttpCodeEnum.NEED_LOGIN);
+        }
+    }
+
     private boolean numberExist(String number) {
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getNumber, number);

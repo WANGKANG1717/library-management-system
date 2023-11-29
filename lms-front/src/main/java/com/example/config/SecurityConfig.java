@@ -23,7 +23,7 @@ public class SecurityConfig {
     // 白名单放行
     public static final List<String> WHITE_LIST = List.of("/user/login");
     public static final List<String> DOC_WHITE_LIST = List.of("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/doc.html", "/webjars/**", "doc.html#/**");
-
+    public static final List<String> POST_WHITE_LIST = List.of("/user");
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
     @Autowired
@@ -61,6 +61,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                                 .requestMatchers(WHITE_LIST.toArray(new String[0])).anonymous()
                                 .requestMatchers(HttpMethod.GET, DOC_WHITE_LIST.toArray(new String[0])).permitAll()
+                                .requestMatchers(HttpMethod.POST, POST_WHITE_LIST.toArray(new String[0])).permitAll()
                                 .anyRequest().authenticated()
                                 // .anyRequest().permitAll()
                 );
