@@ -18,6 +18,6 @@ import java.util.List;
 
 @Mapper
 public interface BookMapper extends BaseMapper<Book> {
-    @Select("select count(id) count, category from book GROUP BY category")
+    @Select("select count(id) count, category from book where category is not null and category!='' and del_flag='0' GROUP BY category")
     List<BookCategoryDto> countCategory();
 }

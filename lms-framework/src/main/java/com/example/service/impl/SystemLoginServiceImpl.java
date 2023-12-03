@@ -17,6 +17,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.*;
 
@@ -31,15 +32,22 @@ public class SystemLoginServiceImpl extends ServiceImpl<UserMapper, User> implem
     @Override
     @Transactional
     public ResponseResult login(User user) {
+        if (!StringUtils.hasText(user.getNumber())) {
+            return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_NULL3);
+        }
         Map<String, Object> map = new HashMap<>();
         map.put("number", user.getNumber());
-        map.put("type", user.getType());
+        if (!Objects.isNull(user.getType())) {
+            map.put("type", user.getType());
+        }
         List<User> list = getBaseMapper().selectByMap(map);
         if (list.size() == 0) {
             if (user.getType() == SystemConstants.ADMIN) {
                 return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS);
             } else if (user.getType() == SystemConstants.NORMAL) {
                 return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS2);
+            } else {
+                return ResponseResult.errorResult(AppHttpCodeEnum.NUMBER_NOT_EXISTS3);
             }
         }
 

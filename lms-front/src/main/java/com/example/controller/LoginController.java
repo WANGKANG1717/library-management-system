@@ -42,7 +42,7 @@ public class LoginController {
             throw new SystemException(AppHttpCodeEnum.PASSWORD_NOT_NULL);
         }
         User user = BeanCopyUtils.copyBean(userDto, User.class);
-        user.setType(SystemConstants.NORMAL);
+        user.setType(null);
         return loginService.login(user);
     }
     @PostMapping("/user/logout")
